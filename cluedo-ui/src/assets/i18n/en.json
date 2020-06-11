@@ -1,0 +1,156 @@
+{
+  "alert": {
+    "INFORMATION_UPDATED": "Your information has been updated.",
+    "PASSWORD_UPDATED": "Your password has been updated.",
+    "REGISTER_SUCCESFULL": "You have registered succefully.",
+    
+    "PASSWORD_NOT_VALID": "The password must contain at least 1 uppercase character and 1 digit.",
+    "PASSWORD_IS_SAME": "The password must be a different one to change it.",
+    "WRONG_PASSWORD": "The old password is incorrect.",
+    "INVALID_LOGIN": "Invalid username or password",
+    "CHARACTERTYPE_TAKEN": "This character is already in use",
+    "LOBBY_START_PLAYER_COUNT": "There must be at lease 3 players to start a game",
+    "PLAYER_NOT_HOST": "Only the host can do this.",
+    "UNEXPECTED": "An unexpected error has occured.",
+    "USERNAME_EXISTS": "This username is already in use.",
+    "EMAIL_EXISTS": "This email is already in use."
+  },
+  "general": {
+    "navigation": {
+      "admin": "Admin",
+      "settings": "Settings",
+      "play": "Play",
+      "statistics": "Statistics",
+      "logout": "Log out"
+    },
+    "actions": {
+      "close": "close",
+
+      "invite_button": "Invite",
+      "invite": "Invite friends",
+      "invite_question": "Who would you like to invite?"
+    },
+    "welcome": "Welcome to the cluedo application",
+    "languages": {
+      "en": "English",
+      "nl": "Nederlands"
+    },
+    "language": "English",
+    "login": {
+      "fieldname": "Log in"
+    },
+    "register": {
+      "email": {
+        "fieldname": "Email",
+        "required": "Email is required",
+        "invalid": "Email is invalid"
+      },
+      "username": {
+        "fieldname": "Username",
+        "required": "Username is required"
+      },
+      "password": {
+        "fieldname": "Password",
+        "required": "Password is required",
+        "minlength": "Password must be at least 6 characters"
+      },
+
+      "action": "Register",
+      "back": "Already have an account? Log in"
+    },
+    "account": {
+      "title": "Settings",
+      "profile": "Profile",
+      "username": "Username",
+      "save": "Save",
+      "account": "Account",
+      "change": "Change password",
+      "changeInformation": "Change username or email",
+      "delete": "Delete account",
+      "newpassword": "New password",
+      "currentpassword": "Current password",
+      "back": "Cancel"
+    },
+    "report": {
+      "OFFENSIVE_LANGUAGE": "Offensive language",
+      "OFFENSIVE_USERNAME": "Offensive username",
+      "CHEATING": "Cheating"
+    }
+  },
+  "lobby": {
+    "list": {
+      "title": "Create or join a game",
+      "new": "Create new lobby",
+      "refresh": "Refresh",
+      "name": "Name",
+      "host": "Host",
+      "players": "Players",
+      "action": "Action",
+      "open": "Open",
+      "ongoing": "Ongoing games",
+      "joined": "Your lobbies",
+      "other": "Open lobbies",
+      "join": "Join"
+    },
+    "lobby": {
+      "settings": "Settings",
+      "name": "Lobby name",
+      "maxplayers": "Max players",
+      "playeramount": "{{amount}} players",
+      "maxturn": "Max turn duration",
+      "players": "Players",
+      "kick": "Kick",
+      "report": "Report abuse",
+      "noactions": "No available actions",
+      "host": "host",
+      "start": "Start game",
+      "invite": "Invite friends",
+      "leave": "Leave lobby",
+      "menu": "Back to menu"
+    }
+  },
+  "game": {
+    "dice": {
+      "total": "Total: {{count}}",
+      "roll": "Roll"
+    },
+    "cardtypes": {
+      "suspects": "Suspects",
+      "weapons": "Weapons",
+      "rooms": "Rooms"
+    },
+    "types": {
+      "PURPLE": "Professor Plum",
+      "RED": "Miss Scarlett",
+      "GREEN": "Reverand Green",
+      "YELLOW": "Colonel Mustard",
+      "BLUE": "Mrs. Peacock",
+      "WHITE": "Mrs. White",
+      "REVOLVER": "Revolver",
+      "ROPE": "Rope",
+      "DAGGER": "Dagger",
+      "WRENCH": "Wrench",
+      "CANDLESTICK": "Candlestick",
+      "LEADPIPE": "Lead pipe",
+      "KITCHEN": "Kitchen",
+      "BALLROOM": "Ballroom",
+      "CONSERVATORY": "Conservatory",
+      "BILLIARDROOM": "Billiardroom",
+      "LIBRARY": "Library",
+      "STUDY": "Study",
+      "HALL": "Hall",
+      "LOUNGE": "Lounge",
+      "DININGROOM": "Diningroom",
+      "CELLAR": "Cellar",
+      "": ""
+    },
+    "suggestion": {
+      "choice": "Choose a card",
+      "make": "Make a suggestion"
+    },
+    "accusation": {
+      "make": "Make an accusation",
+      "turn": "End turn"
+    }
+  }
+}

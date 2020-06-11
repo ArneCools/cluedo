@@ -1,0 +1,8 @@
+<div id="noMovesPossible" [hidden]="possibilities.hasTurn">
+  <span id="Message" [innerText]="getReason()"></span>
+</div>
+
+<div id="possibleMoves" [hidden]="!possibilities.hasTurn">
+  <app-dice class="option"  (rolledTotal)="getRoll($event)" [canRoll]="(possibilities.movesPossible && possibilities.hasTurn)"></app-dice>
+  <button class="option" (click)="takePassage()" [disabled]="(possibilities.roomWithPassage == null || !possibilities.hasTurn)">Take Passage</button>
+</div>

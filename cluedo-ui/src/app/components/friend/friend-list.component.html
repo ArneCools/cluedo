@@ -1,0 +1,54 @@
+<mat-expansion-panel>
+  <mat-expansion-panel-header style="color: white;" class="specific-class">
+    <mat-panel-title style="color: white;">
+      <mat-icon class="mr-2">group</mat-icon>
+      Friends
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+
+  <mat-card>
+    <h6>Add a friend</h6>
+    <form [formGroup]="addFriendForm" (ngSubmit)="add()">
+      <mat-form-field class="w-100 whiteInput">
+        <input
+          matInput
+          placeholder="{{ 'general.register.username.fieldname' | translate }}"
+          formControlName="username"
+        />
+      </mat-form-field>
+      <button [disabled]="loading" mat-raised-button color="primary">
+        <span
+          *ngIf="loading"
+          class="spinner-border spinner-border-sm mr-1"
+        ></span>
+        <span translate>Add</span>
+      </button>
+    </form>
+  </mat-card>
+
+  <div class="scroll">
+    <mat-card>
+      <h6>Friends</h6>
+      <ul
+        class="list-group list-group-flush mb-3"
+        *ngFor="let friend of friends"
+      >
+        <li>
+          <p>{{ friend.userName }}</p>
+          <button (click)="open(friend)" mat-button>Open</button>
+        </li>
+      </ul>
+
+      <h6>Requests</h6>
+      <ul
+        class="list-group list-group-flush mb-3"
+        *ngFor="let friend of requests"
+      >
+        <li>
+          <p>{{ friend.userName }}</p>
+          <button (click)="confirm(friend)" mat-button>Confirm</button>
+        </li>
+      </ul>
+    </mat-card>
+  </div>
+</mat-expansion-panel>

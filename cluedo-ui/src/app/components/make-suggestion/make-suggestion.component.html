@@ -1,0 +1,35 @@
+<div class="grid">
+  <div class="box">
+    <div *ngFor="let card of getCards" class="card">
+      <img
+        [src]="card.url"
+        alt=""
+        class="imgCard"
+        (click)="selectCard(card.cardType)"
+        [ngClass]="!asAccusation ? card.cardType.toString() +'_SUGGESTION' : card.cardType.toString() + '_ACCUSATION' "
+      />
+      <span translate>{{ "game.types." + card.type }}</span>
+    </div>
+  </div>
+  <div class="btnEnd">
+    <button mat-raised-button color="grey" (click)="cancel()">Cancel</button>
+    <button mat-raised-button color="grey" (click)="sendSuggestion()">
+      <span translate>game.accusation.make</span>
+    </button>
+  </div>
+
+
+  <!--
+  <button mat-raised-button color="grey" (click)="sendSuggestion()" [hidden]="sentSuggestion">
+    <span translate>game.suggestion.make</span>
+  </button>
+  <div class="btnEnd" [hidden]="!sentSuggestion">
+    <button  mat-raised-button color="grey" (click)="sendAccusation()">
+      <span translate>game.accusation.make</span>
+    </button>
+    <button mat-raised-button color="warn" (click)="endTurn()">
+      <span translate>game.accusation.turn</span>
+    </button>
+  </div>
+  -->
+</div>

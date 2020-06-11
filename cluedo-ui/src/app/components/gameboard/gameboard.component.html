@@ -1,0 +1,37 @@
+<ng-template #tplPieceImage let-tile let-classes="classes">
+  <span class="image"
+        *ngFor="let character of getCharacters(tile.xcoord, tile.ycoord)"
+        [ngClass]="character+classes"
+        [ngStyle]="{height: convertToUnit(gwidth), width: convertToUnit(gwidth)}">
+    </span>
+</ng-template>
+
+<span [hidden]="playerCharacter!=currentTurn.player.characterType">
+  <button (click)="startAccusation()">Accusation</button>
+  <button (click)="skipTurn()">End Turn</button>
+</span>
+
+<div class="gameboard" [ngStyle]="{ width: convertToUnit(gwidth*dimensions.width), height: convertToUnit(gwidth*dimensions.height) }" *ngIf="dimensions">
+  <span class="gameTile room" [ngStyle]="{ width: convertToUnit(gwidth*room.width), height: convertToUnit(gwidth*room.height), left: convertToUnit(gwidth*room.xcoord), top: convertToUnit(gwidth*room.ycoord) }"
+                              *ngFor="let room of gameboard.rooms" (click)="moveRoom(room.xcoord, room.ycoord, room.roomType)"
+                              [ngClass]="getRoom(room.xcoord, room.ycoord, room.roomType)">
+    <ng-template *ngTemplateOutlet="tplPieceImage; context: {$implicit: room, classes: ' character charRoom '}"></ng-template>
+  </span>
+
+  <span class="gameTile spawntile" [ngStyle]="{ width: convertToUnit(gwidth), left: convertToUnit(gwidth*spawntile.xcoord), top: convertToUnit(gwidth*spawntile.ycoord) }"
+                                    *ngFor="let spawntile of gameboard.spawnTiles" (click)="move(spawntile.xcoord, spawntile.ycoord)"
+                                    [ngClass]="getSpawnTile(spawntile)">
+    <ng-template *ngTemplateOutlet="tplPieceImage; context: {$implicit: spawntile, classes: ' character '}"></ng-template>
+  </span>
+
+  <span class="gameTile tile" [ngStyle]="{ width: convertToUnit(gwidth), left: convertToUnit(gwidth*tile.xcoord), top: convertToUnit(gwidth*tile.ycoord) }"
+                              *ngFor="let tile of gameboard.tiles" (click)="move(tile.xcoord, tile.ycoord)"
+                              [ngClass]="getChoice(tile.xcoord, tile.ycoord)">
+   <ng-template *ngTemplateOutlet="tplPieceImage; context: {$implicit: tile, classes: ' character '}"></ng-template>
+  </span>
+</div>
+
+<!--TODO: hide turn when suggestion or a choice has been made-->
+<turn class="choiceBox" [currentTurn]="currentTurn" (roll)="getPositions($event)" [character]="playerCharacter"  [gameId]="gameId" (passage)="takePassage()" [hidden]="visibleSuggestionScreen"></turn>
+
+<app-make-suggestion class="choiceBox" (canceller)="visibleSuggestionScreen = false;" id="scenarioScreen" [gameId]="gameId" [character]="playerCharacter" [asAccusation]="asAccusation" [hidden]="!visibleSuggestionScreen"></app-make-suggestion>

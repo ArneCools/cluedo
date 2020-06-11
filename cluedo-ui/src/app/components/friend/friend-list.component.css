@@ -1,0 +1,65 @@
+li {
+  display: inline-flex;
+}
+button {
+  margin: 0px;
+  height: min-content;
+}
+
+.scroll {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 240px;
+}
+
+mat-expansion-panel {
+  background-color: inherit;
+  color: white;
+  box-shadow: none !important;
+  border-radius: 0;
+}
+
+/* .mat-expansion-panel-header-title, .mat-expansion-indicator, .mat-expansion-panel-header-description, .mat-expansion-indicator::after {
+    color: white;
+} */
+
+mat-expansion-panel-header {
+  padding: 0 16px;
+  position: sticky;
+  top: 0;
+}
+
+.mat-expansion-panel-body {
+  padding: 0;
+}
+
+::ng-deep .specific-class > .mat-expansion-indicator:after {
+  color: white;
+}
+
+mat-card {
+  border-radius: 0;
+  background-color: inherit;
+  box-shadow: none !important;
+  border: 1px white solid;
+  color: white;
+}
+
+mat-card:last-child {
+  border-top: none;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: green !important;
+}
+
+::ng-deep.mat-form-field-underline {
+  /*change color of underline*/
+  background-color: green !important;
+}
+
+::ng-deep.mat-form-field-ripple {
+  /*change color of underline when focused*/
+  background-color: green !important;
+}

@@ -1,0 +1,9 @@
+.gameboard {
+  display: inline-block;
+  vertical-align: top;
+  padding: 5% 5%;
+}
+
+span,button {
+  vertical-align: top;
+}

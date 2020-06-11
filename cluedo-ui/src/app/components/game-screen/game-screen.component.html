@@ -1,0 +1,4 @@
+<span [innerText]="getTurnLimit()"></span>
+<app-gameboard class="gameboard" [currentTurn]="currentTurn" [gameId]="lobbyDetails.cluedoId"  [playerId]="lobbyDetails.playerId" ></app-gameboard>
+<app-note class="d-inline-block" *ngIf="lobbyDetails" [cluedoId]="lobbyDetails.cluedoId"></app-note>
+<button routerLink="/lobb" mat-raised-button color="primary">Multiplayer</button>
